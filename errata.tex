@@ -1,0 +1,87 @@
+\pdfsuppresswarningpagegroup=1
+\documentclass[mytheorems]{SIAMbook2019}
+
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage[nottoc]{tocbibind}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{mathtools}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{cancel}
+\usepackage{fix-cm}
+\usepackage{siunitx}
+
+\usepackage{amsfonts}
+\usepackage{times}
+\usepackage{esint}
+\usepackage[T1]{fontenc}
+\renewcommand{\sfdefault}{phv}
+\renewcommand{\ttdefault}{txtt}
+\renewcommand\bfdefault{b}
+
+\definecolor{tab-blue}{HTML}{1f77b4}
+\definecolor{tab-orange}{HTML}{ff7f0e}
+\definecolor{tab-green}{HTML}{2ca02c}
+\definecolor{tab-red}{HTML}{d62728}
+\definecolor{tab-purple}{HTML}{9467bd}
+\definecolor{tab-brown}{HTML}{8c564b}
+\definecolor{tab-pink}{HTML}{e377c2}
+\definecolor{tab-gray}{HTML}{7f7f7f}
+\definecolor{tab-olive}{HTML}{bcbd22}
+\definecolor{tab-cyan}{HTML}{17becf}
+
+\usepackage[backref=section,
+            bookmarks=true,
+            colorlinks=true,
+            citecolor=tab-red,
+            linkcolor=tab-blue,
+            urlcolor=tab-blue,
+            hypertexnames=true,
+            linktoc=all]{hyperref}
+
+\usepackage{latexsym}
+\renewcommand{\sfdefault}{phv}
+\renewcommand{\ttdefault}{txtt}
+\renewcommand\bfdefault{b}
+
+\usepackage{bm}
+\renewcommand{\vec}[1]{\boldsymbol{#1}}
+\newcommand{\dvec}[1]{\vec{#1}}
+
+\definecolor{latexgray}{gray}{0.95}
+\newcommand{\erratafix}[1]{\medskip\newline\colorbox{latexgray}{\begin{minipage}[t]{0.80\textwidth}#1\end{minipage}}}
+
+\begin{document}
+
+\thispagestyle{empty}
+\par\noindent\hfill\rule{\textwidth}{0.5pt}
+
+\medskip
+\noindent{\Large Numerical Partial Differential Equations}\newline
+\noindent James H. Adler, Hans De Sterck, Scott MacLachlan, Luke Olson
+\medskip
+
+\noindent Errata for the first printing. \today
+
+\medskip
+\noindent \url{https://epubs.siam.org/doi/book/10.1137/1.9781611978285}
+
+\par\noindent\hfill\rule{\textwidth}{0.5pt}
+
+\medskip
+
+\begin{itemize}
+  \item  \textcolor{tab-red}{Page 402, line 9:} Missing $\;\widehat{}\;$ on $\phi_q$:
+    \erratafix{
+    the nodes $x_{k,q}\in\Omega_k$, $\phi_{k,q}(x)$, are related as $\phi_{k,q}(F_k(\widehat{x})) = \widehat{\phi}_q(\widehat{x})$.
+  }
+\end{itemize}
+
+\end{document}

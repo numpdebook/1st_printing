@@ -1,0 +1,9 @@
+*.aux
+*.auxlock
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+errata.pdf
+.DS_Store
