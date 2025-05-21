@@ -56,7 +56,7 @@
 \newcommand{\dvec}[1]{\vec{#1}}
 
 \definecolor{latexgray}{gray}{0.95}
-\newcommand{\erratafix}[1]{\medskip\newline\colorbox{latexgray}{\begin{minipage}[t]{0.80\textwidth}#1\end{minipage}}}
+\newcommand{\erratafix}[1]{\medskip\newline\colorbox{latexgray}{\begin{minipage}[t]{0.90\textwidth}#1\end{minipage}}}
 
 \begin{document}
 
@@ -77,7 +77,7 @@
 
 \medskip
 
-\begin{itemize}
+\begin{itemize}[itemsep=10pt]
   \item  \textcolor{tab-red}{page 402, line 9:} Missing $\;\widehat{}\;$ on $\phi_q$:
     \erratafix{
     the nodes $x_{k,q}\in\Omega_k$, $\phi_{k,q}(x)$, are related as $\phi_{k,q}(F_k(\widehat{x})) = \widehat{\phi}_q(\widehat{x})$.
@@ -87,6 +87,15 @@
     \erratafix{
       {\sc R.~A. Adams and J.~J.~F. Fournier}, {\em Sobolev Spaces}, vol.~140 of Pure and Applied Mathematics, Elsevier/Academic Press, second~ed., 2003, \url{https://www.sciencedirect.com/bookseries/pure-and-applied-mathematics/vol/140}.
     }
+
+  \item \textcolor{tab-red}{page 222, exercise \#7:} The Fromm slope should have a minus (not a plus):
+    \erratafix{
+    with $a > 0$.  Using the REA algorithm (see~Algorithm 6.1), consider the Fromm slope
+      \begin{equation*}
+      \delta_{k,\ell} = \frac{1}{2}(u_{k+1,\ell} - u_{k-1,\ell}).
+      \end{equation*}
+      }
+
 \end{itemize}
 
 \end{document}
