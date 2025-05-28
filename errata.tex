@@ -85,11 +85,49 @@
       \delta_{k,\ell} = \frac{1}{2}(u_{k+1,\ell} - u_{k-1,\ell}).
       \end{equation*}
       }
+  \item  \textcolor{tab-red}{page 401, last paragraph:} The notation here is inconsistent, introducting $\phi_{q,k}(x)$, which later becomes $\phi_{k,q}(x)$.  The latter notation is more consistent:
+ \erratafix{
+For $v(x) \in \mathcal{V}^{h_x}$, the restriction to each element, $v_k(x)$, is a
+polynomial of degree at most $p$.  Here, we consider a \textit{nodal} representation of the
+polynomial, writing $v_k(x)$ in element $\Omega_k$ in terms of a nodal basis, $\{\phi_{k,q}(x)\}_{q=0}^p$,
+where the basis functions, $\phi_{k,q}(x)$, satisfy $\phi_{k,q}(x_{k,j})=\delta_{q,j}$ at the
+$p+1$ interpolation points, $x_{k,0},\dots,x_{k,p}$, in element $\Omega_k$, as shown in Figure 9.5.2.
+The nodal basis functions $\phi_{k,q}(x)$ are given by
+the Lagrange polynomials.
+}
 
   \item  \textcolor{tab-red}{page 402, line 9:} Missing $\;\widehat{}\;$ on $\phi_q$:
     \erratafix{
     the nodes $x_{k,q}\in\Omega_k$, $\phi_{k,q}(x)$, are related as $\phi_{k,q}(F_k(\widehat{x})) = \widehat{\phi}_q(\widehat{x})$.
   }
+
+  \item  \textcolor{tab-red}{page 402, two lines after (9.157):} The function $u^{h_x}$ should just be $u$:
+    \erratafix{
+equivalent, since we use the parts of $u$ and $v$ that are restricted to $\Omega_k$, and are,\ldots
+}
+
+  \item  \textcolor{tab-red}{page 404, eqn. (9.165):} The function $\vec{z}$ should depend on $\vec{u}_{k-1}$ and $\vec{u}_{k+1}$ in addition to $\vec{u}_k$:
+    \erratafix{
+\begin{align*}
+  M \frac{d\vec{u}_k}{dt} & = \frac{2}{h_x} \left(K \vec{f}_k(\vec{u}_k)
+  +f^*(u_{k-1,p},u_{k,0})
+   \vec{\delta}_0
+  -f^*(u_{k,p},u_{k+1,0})
+  \vec{\delta}_p\right),\label{eq:dgsemi}\\
+                      & =: -\vec{z}(\vec{u}_{k-1},\vec{u}_k,\vec{u}_{k+1}),
+\end{align*}
+}
+
+\item  \textcolor{tab-red}{page 410, eqn. (9.187):} The sign on the exponent should be positive, not negative:
+  \erratafix{
+  \begin{equation*}
+  \widetilde{f}_{q,q} =
+  \begin{cases}
+    1 & \text{for $q < p_{\text{cutoff}}$,}\\
+    e^{\alpha\left(\frac{q+1-p_{\text{cutoff}}}{p+1-p_{\text{cutoff}}}\right)^{2s}} & \text{for $q\geq p_{\text{cutoff}}$,}
+  \end{cases}
+\end{equation*}
+}
 
 \item \textcolor{tab-red}{page 563, ref. [2]:} The term ``editors'' should be removed from the citation:
     \erratafix{
