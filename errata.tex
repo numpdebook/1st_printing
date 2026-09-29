@@ -58,6 +58,23 @@
 \definecolor{latexgray}{gray}{0.95}
 \newcommand{\erratafix}[1]{\medskip\newline\colorbox{latexgray}{\begin{minipage}[t]{0.90\textwidth}#1\end{minipage}}}
 
+% ----- algorithms
+\usepackage[algo2e,ruled,vlined,algochapter,dotocloa,linesnumbered]{algorithm2e}
+\SetCommentSty{scriptsize}
+\SetKwComment{tcc}{\{}{\}}
+\SetKwIF{If}{ElseIf}{Else}{if}{}{else if}{else}{endif}
+\SetKwFor{While}{while}{}{endw}
+\SetKwFor{ForEach}{for each}{}{}
+\SetKwFor{For}{for}{}{}
+\SetKwInOut{Input}{Input~}
+\SetKwInOut{Output}{Output~}
+\SetKwInput{Input}{Input~}
+\SetKwInput{Output}{Output~}
+\SetKw{Continue}{continue}
+\SetKw{Break}{break}
+\let\oldnl\nl% Store \nl in \oldnl
+\newcommand{\nonl}{\renewcommand{\nl}{\let\nl\oldnl}}% Remove line number for one line of algorithm
+
 \begin{document}
 
 \thispagestyle{empty}
@@ -84,6 +101,30 @@
       \begin{equation*}
       \delta_{k,\ell} = \frac{1}{2}(u_{k+1,\ell} - u_{k-1,\ell}).
       \end{equation*}
+      }
+  \item \textcolor{tab-red}{page 289, Algorithm 7.14: CG applied to $L^T A L\vec{y} = L^T\vec{f}$:, Line 7}
+    The the final line should not have $L^T A L$.
+    \erratafix{
+      {\renewcommand{\thealgocf}{7.14}
+      \begin{algorithm2e}[H]
+  \caption{CG applied to $L^T A L\vec{y} = L^T\vec{f}$}
+  \DontPrintSemicolon%
+  \Input{$A$, linear system matrix\newline
+         $L$, factorized preconditioner with $M = LL^T$\newline
+         $\vec{f}$, linear system right-hand side\newline
+         $\vec{u}_0$, initial guess
+       }
+   \Output{$\hat{\vec{y}}_{k+1}$, $(k+1)\text{th}$ iterate with $\vec{u}\approx L \hat{\vec{y}}_{k+1}$}
+  \nonl\;
+  $\hat{\vec{r}}_0 = L^T(\vec{f} - A\vec{u}_0)$, $\hat{\vec{p}}_0 = \hat{\vec{r}}_0$, $\hat{\vec{y}}_0 = L^{-1}\vec{u}_0$\;
+  \For{$k=1,2, \ldots$}{
+        $\alpha_k = \hat{\vec{r}}_k^T\hat{\vec{r}}_k / \hat{\vec{p}}_k^T L^T AL\hat{\vec{p}}_k$\;
+        $\hat{\vec{y}}_{k+1} = \hat{\vec{y}}_{k} +\alpha_{k}\hat{\vec{p}}_k$\;
+        $\hat{\vec{r}}_{k+1} = \hat{\vec{r}}_{k} -\alpha_{k}L^T A L\hat{\vec{p}}_k$\;
+        $\beta_k = \hat{\vec{r}}_{k+1}^T\hat{\vec{r}}_{k+1} / \hat{\vec{r}}_{k}^T\hat{\vec{r}}_{k}$\;
+        $\hat{\vec{p}}_{k+1} = \hat{\vec{r}}_{k+1} +\beta_{k} \hat{\vec{p}}_k$\;
+  }
+      \end{algorithm2e}}
       }
   \item  \textcolor{tab-red}{page 401, last paragraph:} The notation here is inconsistent, introducting $\phi_{q,k}(x)$, which later becomes $\phi_{k,q}(x)$.  The latter notation is more consistent:
  \erratafix{
